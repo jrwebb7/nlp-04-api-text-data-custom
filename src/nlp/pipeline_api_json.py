@@ -1,3 +1,5 @@
+# Customized by James Webb (2026-11)
+
 """pipeline_api_json.py - Module 4 Script.
 
 NO EDITS REQUIRED IN THIS FILE (if paths have not changed.)

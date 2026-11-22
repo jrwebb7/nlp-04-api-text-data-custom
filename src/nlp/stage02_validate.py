@@ -1,3 +1,5 @@
+# Customized by James Webb (2026-11)
+
 """stage02_validate.py.
 
 (EDIT YOUR VERSION OF THIS FILE)

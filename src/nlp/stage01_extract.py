@@ -1,3 +1,5 @@
+# Customized by James Webb (2026-11)
+
 """stage01_extract.py - Stage 01: Extract.
 
 NO EDITS REQUIRED IN THIS FILE (if paths have not changed.)
