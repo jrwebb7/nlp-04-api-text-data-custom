@@ -1,4 +1,4 @@
-# nlp-04-api-text-data
+# nlp-04-api-text-data-custom
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
 [![CI](https://github.com/denisecase/nlp-04-api-text-data/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-04-api-text-data/actions/workflows/ci-python-zensical.yml)
@@ -12,6 +12,8 @@
 > Acquire, validate, and transform JSON data from web APIs using Python.
 
 ## Project Overview
+
+For my custom project, I plan to adapt the Python pipeline to collect comments from the JSONPlaceholder API. I'll check that each record has the fields I need, calculate the word count of each comment body, and save the results as a CSV. This will let me compare comment lengths across posts.
 
 Author: Denise Case
 
