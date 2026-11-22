@@ -1,8 +1,8 @@
 # nlp-04-api-text-data-custom
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/nlp-04-api-text-data/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-04-api-text-data/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/nlp-04-api-text-data/)
+[![CI](https://github.com/jrwebb7/nlp-04-api-text-data-custom/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/jrwebb7/nlp-04-api-text-data-custom/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://jrwebb7.github.io/nlp-04-api-text-data-custom/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
@@ -10,6 +10,20 @@
 [![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 > Acquire, validate, and transform JSON data from web APIs using Python.
+
+## Run the Comments Project
+
+This project measures comment length across posts using JSONPlaceholder.
+
+From the repository root, run:
+
+    uv sync
+    uv run python -m nlp.pipeline_comments
+
+The pipeline saves the raw response to `data/raw/comments_raw.json`
+and the analysis table to `data/processed/comments_processed.csv`.
+See the [project report](https://jrwebb7.github.io/nlp-04-api-text-data-custom/)
+for the chart, results, and interpretation.
 
 ## Project Overview
 
@@ -131,7 +145,7 @@ uv run python -m pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/nlp-04-api-text-data/)
+The [hosted documentation site](https://jrwebb7.github.io/nlp-04-api-text-data-custom/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
@@ -145,8 +159,8 @@ to check project files and publish the docs.
 
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/nlp-04-api-text-data/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/nlp-04-api-text-data/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/jrwebb7/nlp-04-api-text-data-custom/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/jrwebb7/nlp-04-api-text-data-custom/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
@@ -231,7 +245,7 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/nlp-04-api-text-data/)
+- [Hosted Documentation](https://jrwebb7.github.io/nlp-04-api-text-data-custom/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)

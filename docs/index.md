@@ -1,99 +1,41 @@
-# Web Mining and Applied NLP Project Report
+# JSONPlaceholder Comment Length Analysis
 
-Web Mining and Applied NLP | Project 04 | Example Report
+## Question and data
 
-## Overview
+How long are comments in the JSONPlaceholder sample, and how does average
+comment length vary across posts? I used the public
+[JSONPlaceholder comments endpoint](https://jsonplaceholder.typicode.com/comments).
 
-This project introduces structured text data acquisition
-using web APIs.
+## Process
 
-The objective is to retrieve JSON data,
-validate its structure,
-transform records into a tabular representation,
-and persist the results for analysis.
+I retrieved the comments with Requests and preserved the original JSON.
+The example used post records with `userId`, `id`, `title`, and `body`.
+The comments include `postId`, `id`, `name`, `email`, and `body`. I checked
+that each record had integer `id` and `postId` values and string `name`
+and `body` values. In Polars, I selected the comment ID, parent post ID,
+comment name, and body, then counted words using whitespace as the separator.
+I exported the table as CSV and checked each row and word count against the
+original JSON.
 
-The project demonstrates a modular
-Extract, Validate, Transform, Load (EVTL) pipeline
-with explicit inputs and outputs.
+## Results
 
-## Tools and Methods
+I verified 500 comments across 100 posts. Comment bodies
+ranged from 14 to 34 words, with a mean of
+24.0 words and a median of 24.0. The lowest
+post-level average was 20.0 words (post 36), and
+the highest was 28.8 words (post 77).
 
-The project uses:
+![Number of comments in each five-word length range](assets/comment-word-counts.svg)
 
-- Python for pipeline orchestration and processing.
-- Requests for retrieving JSON data from a web API.
-- JSON for representing structured source records.
-- Validation checks for confirming expected data structures.
-- Polars for tabular transformation and derived features.
-- CSV for persistent output.
-- Logging for execution records.
-- Ruff, ty, and pytest for code verification.
-- Zensical and GitHub Pages for published documentation.
+## Interpretation and next steps
 
-The example retrieves post records
-from the JSONPlaceholder demonstration API.
+Grouping comments by parent post lets me compare average lengths across
+posts while keeping each individual comment available for review.
+JSONPlaceholder provides demonstration data, so these patterns describe
+the sample. A next step would be to try the workflow on a real discussion
+dataset and compare length alongside other measures of participation.
 
-The pipeline implements four stages:
+## Reproduce the analysis
 
-- **Extract** - retrieve JSON records and preserve the raw response.
-- **Validate** - verify the structure and types of the retrieved records.
-- **Transform** - select fields and calculate text lengths.
-- **Load** - save the transformed data to a CSV file.
-
-Each stage is implemented as a separate Python module
-with explicit inputs and outputs.
-
-## Verification
-
-A successful execution displays:
-
-    Pipeline executed successfully!
-
-The pipeline records execution details in a project log.
-
-The following artifacts are created:
-
-- `data/raw/case_raw.json` - original API response.
-- `data/processed/case_processed.csv` - transformed dataset.
-
-These results demonstrate that the pipeline can
-acquire, validate, transform, and persist API data.
-
-Automated tests provide additional verification
-of the pipeline's expected behavior.
-
-## Interpretation
-
-Web APIs provide structured access
-to externally maintained data.
-
-Successful acquisition does not guarantee
-that the data meets analytical requirements.
-
-Validation establishes whether the retrieved
-records have an expected structure,
-while transformation produces a consistent
-representation for subsequent analysis.
-
-The EVTL architecture separates responsibilities,
-making pipeline behavior easier to inspect,
-test, and maintain.
-
-## Documentation Index
-
-- **Home** - this landing page
-- [**Project Instructions**](project-instructions.md)
-- [**Glossary**](glossary.md)
-
-## Project Links
-
-- [GitHub Repository](https://github.com/denisecase/nlp-04-api-text-data)
-- [Example Pipeline](https://github.com/denisecase/nlp-04-api-text-data/blob/main/src/nlp/pipeline_api_json.py)
-- [Example Configuration](https://github.com/denisecase/nlp-04-api-text-data/blob/main/src/nlp/config.py)
-- [Pipeline Stages](https://github.com/denisecase/nlp-04-api-text-data/tree/main/src/nlp)
-
-## Project Resources
-
-- [Project Instructions](project-instructions.md)
-- [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
-- [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/)
+See the [project README](https://github.com/jrwebb7/nlp-04-api-text-data-custom#run-the-comments-project)
+for the run command and output paths.
