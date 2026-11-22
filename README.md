@@ -235,3 +235,19 @@ testing, documentation, and code quality.
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+
+## D2: Post Body Word Count Experiment
+
+I added `body_word_count` to the Transform stage to measure post length
+in words alongside the existing character count. I kept the original posts
+endpoint and predicted that the CSV would keep its six original columns and
+add a seventh column without changing the number of records.
+
+I ran `uv run python -m nlp.pipeline_api_json_experiment` and verified that
+the CSV contained 100 posts and seven columns. I checked every word count
+against Python's `split()`. All 100 matched. The first post body contained
+158 characters and 23 words.
+
+I learned that splitting on whitespace counts words across line breaks in
+the API text. This gives me a second way to compare lengths when I adapt
+the pipeline to comments.
